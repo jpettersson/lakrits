@@ -1,2 +1,2 @@
-#lakrits - arduino client server.
+#lakrits - arduino client.
 Some documentation
