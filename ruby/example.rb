@@ -36,6 +36,6 @@ msg = {
 lakrits.deliver(msg)
 
 loop do
-  #Do other interesting things
+  #Do other more interesting things
   sleep 1
 end

@@ -8,7 +8,7 @@ example:
 sudo ln /dev/tty.usbserial-A800ewIw /dev/cuaa0
 ````
 
-After the port is opened a new thread is started which uses the blocking method getbyte on the serial port.
+After the port is opened a new thread is started which uses the blocking method getbyte on the serial port to receive bytes.
 
 ##Receive messages
 To receive messages, pass a block to the on_message method:
@@ -24,7 +24,7 @@ Example of a received message:
 	{
 		:sender_id => 2000, 	# The id of the sending device
 		:message_type => 2, 	# A 16 bit message type
-		:data => "3,20,100"		# A three byte long payload (Can be up to 64 bytes). Bytes are represented by a comma delimited string.
+		:data => "3,20,100"		# A comma separated string of 8 bit integers in ascii format. The payload can contain up to 64 bytes.
 	}
 ```
 
@@ -36,11 +36,12 @@ lakrits.deliver
 method.
 
 Example of an outgoing message:
+
 ```ruby
 	{
 		:recipient_id => 2000, 	# The id of the recipient device
 		:message_type => 2, 	# A 16 bit message type
-		:data => "3,20,100"		# A three byte long payload (Can be up to 64 bytes). Bytes are represented by a comma delimited string.
+		:data => "3,20,100"		# A comma separated string of 8 bit integers in ascii format. The payload can contain up to 64 bytes.
 	}
 ```
 
