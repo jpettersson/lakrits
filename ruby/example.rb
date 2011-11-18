@@ -25,3 +25,17 @@ lakrits = Lakrits.new
 lakrits.on_message do |message|
   puts 'Lakrits: Message received: ' + message.inspect
 end
+
+#Send one message to the device with id 2000. Set the type to 1 and pass the data 2.
+msg = { 
+          :recipient_id => 2000, 
+          :message_type => 1,
+          :data => "2" 
+       }
+       
+lakrits.deliver(msg)
+
+loop do
+  #Do other interesting things
+  sleep 1
+end
