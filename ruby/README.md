@@ -19,6 +19,7 @@ lakrits.on_message do |message|
 end
 ```
 Example of a received message:
+
 ```ruby
 	{
 		:sender_id => 2000, 	# The id of the sending device
@@ -28,10 +29,9 @@ Example of a received message:
 ```
 
 ##Send messages
-
 To send a message, pass a message hash to the 
 ````
-salmiak.deliver
+lakrits.deliver
 ````
 method.
 
