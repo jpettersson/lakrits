@@ -12,15 +12,41 @@ After the port is opened a new thread is started which uses the blocking method 
 
 ##Receive messages
 To receive messages, pass a block to the on_message method:
-````
-salmiak.on_message do |message|
-	#do something with the message
-end
-````
-##Exceptions
-In the current implementation there's only one exception: 
-DataByteSizeExceeded
 
+```ruby
+lakrits.on_message do |message|
+	#do something with the message hash.
+end
+```
+Example of a received message:
+```ruby
+	{
+		:sender_id => 2000, 	# The id of the sending device
+		:message_type => 2, 	# A 16 bit message type
+		:data => "3,20,100"		# A three byte long payload (Can be up to 64 bytes). Bytes are represented by a comma delimited string.
+	}
+```
+
+##Send messages
+
+To send a message, pass a message hash to the 
+````
+salmiak.deliver
+````
+method.
+
+Example of an outgoing message:
+```ruby
+	{
+		:recipient_id => 2000, 	# The id of the recipient device
+		:message_type => 2, 	# A 16 bit message type
+		:data => "3,20,100"		# A three byte long payload (Can be up to 64 bytes). Bytes are represented by a comma delimited string.
+	}
+```
+
+
+##Exceptions
+In the current implementation there's only one exception: DataByteSizeExceeded
 This is raised when the ASCII representation of a data byte is larger than 254. Larger number needs to be sent as 8 bit chunks.
 
 ##Logging
