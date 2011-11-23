@@ -22,9 +22,9 @@ Example of a received message:
 
 ```ruby
 	{
-		:sender_id => 2000, 	# The id of the sending device
-		:message_type => 2, 	# A 16 bit message type
-		:data => "3,20,100"		# A comma separated string of 8 bit integers in ascii format. The payload can contain up to 64 bytes.
+		:sender_id => 2000, 	# The id of the sending device.
+		:message_type => 2, 	# A 16 bit message type.
+		:data => [3,20,100]		# An Array of 8 bit integers (up to 64 bytes).
 	}
 ```
 
@@ -39,9 +39,9 @@ Example of an outgoing message:
 
 ```ruby
 	{
-		:recipient_id => 2000, 	# The id of the recipient device
-		:message_type => 2, 	# A 16 bit message type
-		:data => "3,20,100"		# A comma separated string of 8 bit integers in ascii format. The payload can contain up to 64 bytes.
+		:recipient_id => 2000, 	 # The id of the receiving device.
+		:message_type => 2, 	 # A 16 bit message type.
+		:data => [3,20,100]		 # An Array of 8 bit integers (up to 64 bytes).
 	}
 ```
 

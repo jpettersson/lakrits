@@ -82,7 +82,7 @@ class Lakrits
     @packets_i = 0
     
     @buffer = []
-    
+        
     spt = Thread.new() { 
       
       while true
@@ -149,7 +149,7 @@ class Lakrits
                   type_high = @buffer[MESSAGE_TYPE_HIGH_OFFSET].to_i
                   type = ( type_high << 8 | type_low)
                   
-                  message = {:sender_id => id.to_s, :message_type => type.to_s, :data => payload}
+                  message = {:sender_id => id, :message_type => type, :data => payload}
                   
                   #### Invoke callback? 
                   unless self.on_packet_callback.nil?
@@ -219,7 +219,7 @@ class Lakrits
     pkt.push payload.length
     
     payload.each do |c| 
-      pkt.push c.to_i
+      pkt.push c
     end
     
     lrc = 0
