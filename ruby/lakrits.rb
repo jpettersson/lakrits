@@ -143,7 +143,7 @@ class Lakrits
                   type_high = @buffer[MESSAGE_TYPE_HIGH_OFFSET].to_i
                   type = ( type_high << 8 | type_low)
                   
-                  message = {:sender_id => id.to_s, :message_type => type.to_s, :data => payload.join(",")}
+                  message = {:sender_id => id.to_s, :message_type => type.to_s, :data => payload}
                   
                   #### Invoke callback? 
                   unless self.on_packet_callback.nil?

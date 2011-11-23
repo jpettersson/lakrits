@@ -18,6 +18,7 @@
 #  For the latest source and documentation, visit:
 #  https://github.com/jpettersson/lakrits
 
+require '/Users/tfh/Projects/lakrits/ruby/lakrits.rb'
 
 Lakrits::Log.level = Lakrits::Log::WARNING
 lakrits = Lakrits.new
@@ -26,11 +27,13 @@ lakrits.on_message do |message|
   puts 'Lakrits: Message received: ' + message.inspect
 end
 
-#Send one message to the device with id 2000. Set the type to 1 and pass the data 2.
+sleep 2
+
+#Send one message to the device with id 2000. Set the type to 1 and pass the data [2, 242, 37].
 msg = { 
           :recipient_id => 2000, 
           :message_type => 1,
-          :data => "2" 
+          :data => ["2","242","37"]
        }
        
 lakrits.deliver(msg)
