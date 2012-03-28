@@ -38,4 +38,4 @@ The header is divided into 8 bytes and contains the "start of transmission" byte
 
 I created lakrits to power my home automation system. I needed a reliable way of transmitting tiny messages between a server and a lot of sensors and actuators. At the time I needed to concentrate on the harder problem of designing the automation system and various ways of controlling it, so I decided to stick to the minimal requirements and create the messaging protocol myself. 
 
-This was over a year ago and I've since decided to switch my system to MQTTs, the smaller implementation intended for situations where TCP/IP is overkill (planning work on C++ and Ruby libraries). I learnt a lot about serial communication while building this and the system has been running almost flawlessly for over a year, so I figured I'll make it available in case anyone is on the same journey as I was. 
+I learnt a lot about serial communication while building this and the system has been running almost flawlessly for over a year, so I figured I'll make it available in case anyone is on the same journey as I was. 
